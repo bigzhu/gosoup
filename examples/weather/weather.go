@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/anaskhan96/soup"
+	"github.com/anaskhan96/gosoup"
 )
 
 func main() {
@@ -16,11 +16,11 @@ func main() {
 	city = city[:len(city)-1]
 	cityInURL := strings.Join(strings.Split(city, " "), "+")
 	url := "https://www.bing.com/search?q=weather+" + cityInURL
-	resp, err := soup.Get(url)
+	resp, err := gosoup.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
-	doc := soup.HTMLParse(resp)
+	doc := gosoup.HTMLParse(resp)
 	grid := doc.Find("div", "class", "b_antiTopBleed b_antiSideBleed b_antiBottomBleed")
 	heading := grid.Find("div", "class", "wtr_titleCtrn").Find("div").Text()
 	conditions := grid.Find("div", "class", "wtr_condition")

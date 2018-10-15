@@ -1,8 +1,8 @@
-/* soup package implements a simple web scraper for Go,
+/* gosoup package implements a simple web scraper for Go,
 keeping it as similar as possible to BeautifulSoup
 */
 
-package soup
+package gosoup
 
 import (
 	"errors"

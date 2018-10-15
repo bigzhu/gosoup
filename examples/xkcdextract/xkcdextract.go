@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/anaskhan96/soup"
+	"github.com/anaskhan96/gosoup"
 )
 
 func main() {
@@ -11,8 +11,8 @@ func main() {
 	var num int
 	fmt.Scanf("%d", &num)
 	url := fmt.Sprintf("https://xkcd.com/%d", num)
-	resp, _ := soup.Get(url)
-	doc := soup.HTMLParse(resp)
+	resp, _ := gosoup.Get(url)
+	doc := gosoup.HTMLParse(resp)
 	title := doc.Find("div", "id", "ctitle").Text()
 	fmt.Println("Title of the comic :", title)
 	comicImg := doc.Find("div", "id", "comic").Find("img")

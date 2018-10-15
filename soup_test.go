@@ -1,4 +1,4 @@
-package soup
+package gosoup
 
 import (
 	"reflect"
